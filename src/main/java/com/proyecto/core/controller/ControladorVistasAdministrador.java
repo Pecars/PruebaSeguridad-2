@@ -1,12 +1,21 @@
 package com.proyecto.core.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.proyecto.core.interfaces.IListadoCapacitaciones;
+import com.proyecto.core.model.CreaCapacitacion;
 
 @Controller
 @RequestMapping("/administrador")
 public class ControladorVistasAdministrador {
+	
+	@Autowired
+	private IListadoCapacitaciones service;
 
 	@GetMapping("controlpagos")
 	public String control_pago() {
@@ -47,4 +56,20 @@ public class ControladorVistasAdministrador {
 	public String mantencion_info_profesional() {
 		return "mantencion_info_profesional";
 	}
+	
+	@GetMapping("nuevacapacitacion")
+	public String nueva_capacitacion(Model m) {
+		m.addAttribute("capacitacion", new CreaCapacitacion());
+		return "nueva_capacitacion";
+	}
+	
+	@GetMapping(value="/guardarcapacitacion")
+	public String save(@Validated CreaCapacitacion cap, Model m) {
+		
+		
+		service.guardarNueva(cap);
+		return "redirect:/index";
+		
+	}
+	
 }

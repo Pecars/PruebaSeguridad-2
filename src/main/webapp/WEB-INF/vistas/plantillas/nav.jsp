@@ -112,6 +112,7 @@
 												Información Clientes</a></li>
 										<li><a href="/administrador/mantencioninfoprofesional">Mantener
 												Información Profesionales</a></li>
+										<li><a href="/administrador/nuevacapacitacion">Crear Nueva Capacitacion</a></li>
 									</ul></li>
 							</ul> <!-- /.nav-second-level --></li>
 

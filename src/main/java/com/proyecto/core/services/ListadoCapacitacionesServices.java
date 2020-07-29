@@ -39,5 +39,5 @@ public class ListadoCapacitacionesServices implements IListadoCapacitaciones {
 		// TODO Auto-generated method stub
 		
 	}
-
+	
 }

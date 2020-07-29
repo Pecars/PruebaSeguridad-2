@@ -37,14 +37,14 @@
 						<tbody>
 							<c:forEach items="${listado}" var="obj">
 								<tr class="odd gradeX">
-									<td><c:out value="${obj.capacitacion}" /></td>
-									<td><c:out value="${obj.profesional}" /></td>
-									<td><c:out value="${obj.empresa}" /></td>
-									<td><c:out value="${obj.fechaAgendada}" /></td>
-									<td><c:out value="${obj.fechaRealizada}" /></td>
-									<td><c:out value="${obj.estado}" /></td>
-									<td><c:out value="${obj.tema}" /></td>
-									<td><c:out value="${obj.observacion}" /></td>
+									<td><c:out value="${obj.capacitacion}"/></td>
+									<td><c:out value="${obj.profesional}"/></td>
+									<td><c:out value="${obj.empresa}"/></td>
+									<td><c:out value="${obj.fechaAgendada}"/></td>
+									<td><c:out value="${obj.fechaRealizada}"/></td>
+									<td><c:out value="${obj.estado}"/></td>
+									<td><c:out value="${obj.tema}"/></td>
+									<td><c:out value="${obj.observacion}"/></td>
 								</tr>
 							</c:forEach>
 
