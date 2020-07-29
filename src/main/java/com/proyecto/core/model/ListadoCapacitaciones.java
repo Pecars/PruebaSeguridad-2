@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Table(name="INSTANCIA_CAPACITACION")
 public class ListadoCapacitaciones {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@Column(name="ID_INS")
 	private int idCapacitacion;
 	
