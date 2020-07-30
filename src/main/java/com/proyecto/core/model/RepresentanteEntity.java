@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class RepresentanteEntity {
 	
 	@Id
-	@GeneratedValue (strategy = GenerationType.SEQUENCE)
+	@GeneratedValue (strategy = GenerationType.AUTO)
 	@Column (name="ID_REP")
 	private int idRep;
 	@Column (name="USUARIO_REPRESENTANTE")
@@ -112,6 +112,28 @@ public class RepresentanteEntity {
 		return "RepresentanteEntity [idRep=" + idRep + ", UsuarioRep=" + UsuarioRep + ", claveRep=" + claveRep
 				+ ", nombreRep=" + nombreRep + ", telRep=" + telRep + ", correoRep=" + correoRep + ", rutRep=" + rutRep
 				+ ", emresaRut=" + emresaRut + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + idRep;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		RepresentanteEntity other = (RepresentanteEntity) obj;
+		if (idRep != other.idRep)
+			return false;
+		return true;
 	}
 	
 	

@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class ReporteClienteEntity {
 	
 	@Id
-	@GeneratedValue (strategy = GenerationType.SEQUENCE)
+	@GeneratedValue (strategy = GenerationType.AUTO)
 	@Column (name="ID_REP_CLI")
 	private int idReporteCliente;
 	@Column (name="INICIO_PERIODO_REPORTE")
@@ -148,6 +148,28 @@ public class ReporteClienteEntity {
 				+ ", capPeriodo=" + capPeriodo + ", asesoriasPeriodo=" + asesoriasPeriodo + ", visitasPeriodo="
 				+ visitasPeriodo + ", actividadesMejoraPeriodo=" + actividadesMejoraPeriodo + ", empresaRut="
 				+ empresaRut + ", adminRut=" + adminRut + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + idReporteCliente;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		ReporteClienteEntity other = (ReporteClienteEntity) obj;
+		if (idReporteCliente != other.idReporteCliente)
+			return false;
+		return true;
 	}
 	
 	

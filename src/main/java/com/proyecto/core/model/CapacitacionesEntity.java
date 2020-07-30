@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Table (name="CAPACITACIONES")
 public class CapacitacionesEntity {
 	@Id
-	@GeneratedValue (strategy = GenerationType.SEQUENCE)
+	@GeneratedValue (strategy = GenerationType.AUTO)
 	@Column (name="ID_CAPACITACION")
 	private int idCaps;
 	@Column (name="CAPACITACION")
@@ -122,6 +122,28 @@ public class CapacitacionesEntity {
 		return "CapacitacionesEntity [idCaps=" + idCaps + ", cap=" + cap + ", empresa=" + empresa + ", estadoCap="
 				+ estadoCap + ", fechaAge=" + fechaAge + ", fechaReal=" + fechaReal + ", obs=" + obs + ", profesional="
 				+ profesional + ", temaCap=" + temaCap + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + idCaps;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		CapacitacionesEntity other = (CapacitacionesEntity) obj;
+		if (idCaps != other.idCaps)
+			return false;
+		return true;
 	}
 	
 	
