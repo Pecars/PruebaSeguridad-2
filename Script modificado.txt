@@ -370,3 +370,6 @@ values(1, '2019/06/27', '2020/06/27', 1, 0.5, 1, 1, 2, 1, 24242424, 11111111);
 
 insert into visita (id_vis, motivo_visita, observacion_visita, empresa_rut_empresa, profesionales_rut_profesional)
 values(1, 'Inspección rutinaria', 'Emanación de gas', 24242424, 17887178);
+
+
+-- Trabajar script resto casos de uso a partir de acá
