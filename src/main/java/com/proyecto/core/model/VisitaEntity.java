@@ -78,6 +78,28 @@ public class VisitaEntity {
 		return "VisitaEntity [idVisita=" + idVisita + ", motivoVis=" + motivoVis + ", observacionVis=" + observacionVis
 				+ ", rutEmp=" + rutEmp + ", profesionalesRut=" + profesionalesRut + "]";
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + idVisita;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		VisitaEntity other = (VisitaEntity) obj;
+		if (idVisita != other.idVisita)
+			return false;
+		return true;
+	}
 	
 	
 

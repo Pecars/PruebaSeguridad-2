@@ -79,6 +79,28 @@ public class ReporteAccidenteEntity {
 		return "ReporteAccidenteEntity [idReporteAcc=" + idReporteAcc + ", tipoAcc=" + tipoAcc + ", descripcionAcc="
 				+ descripcionAcc + ", rutEmp=" + rutEmp + ", representanteRut=" + representanteRut + "]";
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + idReporteAcc;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		ReporteAccidenteEntity other = (ReporteAccidenteEntity) obj;
+		if (idReporteAcc != other.idReporteAcc)
+			return false;
+		return true;
+	}
 	
 	
 	

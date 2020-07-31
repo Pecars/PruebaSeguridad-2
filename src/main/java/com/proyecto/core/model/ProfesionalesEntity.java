@@ -170,6 +170,28 @@ public class ProfesionalesEntity {
 				+ ", cargoPro=" + cargoPro + ", profesionPro=" + profesionPro + ", fechaIngresoPro=" + fechaIngresoPro
 				+ ", usuarioPro=" + usuarioPro + ", clavePro=" + clavePro + ", admRut=" + admRut + "]";
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + idPro;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		ProfesionalesEntity other = (ProfesionalesEntity) obj;
+		if (idPro != other.idPro)
+			return false;
+		return true;
+	}
 	
 	
 

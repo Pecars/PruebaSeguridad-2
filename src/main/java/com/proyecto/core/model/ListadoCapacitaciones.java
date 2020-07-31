@@ -137,6 +137,28 @@ public class ListadoCapacitaciones {
 				+ ", fechaRealizada=" + fechaRealizada + ", estado=" + estado + ", tema=" + tema + ", observacion="
 				+ observacion + "]";
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + idCapacitacion;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		ListadoCapacitaciones other = (ListadoCapacitaciones) obj;
+		if (idCapacitacion != other.idCapacitacion)
+			return false;
+		return true;
+	}
 	
 	
 	
