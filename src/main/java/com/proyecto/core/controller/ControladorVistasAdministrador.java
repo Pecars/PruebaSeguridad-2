@@ -2,13 +2,11 @@ package com.proyecto.core.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.proyecto.core.interfaces.IListadoCapacitaciones;
-import com.proyecto.core.model.CreaCapacitacion;
+
 
 @Controller
 @RequestMapping("/administrador")
@@ -58,16 +56,16 @@ public class ControladorVistasAdministrador {
 	}
 	
 	@GetMapping("nuevacapacitacion")
-	public String nueva_capacitacion(Model m) {
-		m.addAttribute("capacitacion", new CreaCapacitacion());
+	public String nueva_capacitacion() {
+	
 		return "nueva_capacitacion";
 	}
 	
-	@GetMapping(value="/guardarcapacitacion")
-	public String save(@Validated CreaCapacitacion cap, Model m) {
+	@GetMapping("guardarcapacitacion")
+	public String save() {
 		
 		
-		service.guardarNueva(cap);
+		//service.guardarNueva(cap);
 		return "redirect:/index";
 		
 	}

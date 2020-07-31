@@ -25,6 +25,7 @@ public class ListadoCapacitacionesServices implements IListadoCapacitaciones {
 	@Override
 	public Optional<ListadoCapacitaciones> listarId(int id) {
 		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

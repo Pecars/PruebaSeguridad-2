@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Table(name="INSTANCIA_CAPACITACION")
 public class ListadoCapacitaciones {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="ID_INS")
 	private int idCapacitacion;
 	
@@ -19,10 +19,10 @@ public class ListadoCapacitaciones {
 	private int capacitacion;
 	
 	@Column(name="PROFESIONALES_RUT_PROF")
-	private int profesional;
+	private String profesional;
 	
 	@Column(name="EMPRESA_RUT_EMPRESA")
-	private int empresa;
+	private String empresa;
 	
 	@Column(name="FECHA_AGENDADA")
 	private String fechaAgendada;
@@ -44,7 +44,7 @@ public class ListadoCapacitaciones {
 	
 	}
 
-	public ListadoCapacitaciones(int idCapacitacion, int capacitacion, int profesional, int empresa,
+	public ListadoCapacitaciones(int idCapacitacion, int capacitacion, String profesional, String empresa,
 			String fechaAgendada, String fechaRealizada, String estado, String tema, String observacion) {
 		super();
 		this.idCapacitacion = idCapacitacion;
@@ -74,19 +74,19 @@ public class ListadoCapacitaciones {
 		this.capacitacion = capacitacion;
 	}
 
-	public int getProfesional() {
+	public String getProfesional() {
 		return profesional;
 	}
 
-	public void setProfesional(int profesional) {
+	public void setProfesional(String profesional) {
 		this.profesional = profesional;
 	}
 
-	public int getEmpresa() {
+	public String getEmpresa() {
 		return empresa;
 	}
 
-	public void setEmpresa(int empresa) {
+	public void setEmpresa(String empresa) {
 		this.empresa = empresa;
 	}
 
