@@ -20,9 +20,15 @@ public class CapacitacionEntity {
 	@Column (name="FECHA_CREACION_CAPACITACION")
 	private String fechaCreacionCap;
 	@Column (name="VIGENCIA_CAPACITACION")
-	private char vigenciaCap;
+	private String vigenciaCap;
 	
-	public CapacitacionEntity(int idCap, String nomCap, String fechaCreacionCap, char vigenciaCap) {
+	
+	
+	public CapacitacionEntity() {
+		
+	}
+
+	public CapacitacionEntity(int idCap, String nomCap, String fechaCreacionCap, String vigenciaCap) {
 		super();
 		this.idCap = idCap;
 		this.nomCap = nomCap;
@@ -54,11 +60,11 @@ public class CapacitacionEntity {
 		this.fechaCreacionCap = fechaCreacionCap;
 	}
 
-	public char getVigenciaCap() {
+	public String getVigenciaCap() {
 		return vigenciaCap;
 	}
 
-	public void setVigenciaCap(char vigenciaCap) {
+	public void setVigenciaCap(String vigenciaCap) {
 		this.vigenciaCap = vigenciaCap;
 	}
 

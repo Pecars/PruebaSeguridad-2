@@ -28,6 +28,10 @@ public class AdministradorEntity {
 	@Column (name="RUT_ADMINISTRADOR")
 	private String rutAdm;
 	
+	public AdministradorEntity() {
+		
+	}
+	
 	public AdministradorEntity(int idAdm, String usuarioAdm, String claveAdm, String nombreAdm, String telAdm,
 			String correoAdm, String rutAdm) {
 		super();

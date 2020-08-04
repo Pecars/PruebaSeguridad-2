@@ -8,7 +8,7 @@ public interface IEmpresaServices {
 	
 	public List<EmpresaEntity> mostrarEmpresa();
 	
-	public void crearEmpresa(EmpresaEntity Empresa);
+	public int crearEmpresa(EmpresaEntity Empresa);
 	
 	public EmpresaEntity buscarEmpresa(int id);
 

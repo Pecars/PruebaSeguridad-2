@@ -8,7 +8,7 @@ public interface IProfesionalesServices {
 	
 	public List<ProfesionalesEntity> mostrarProfesional();
 	
-	public void crearProfesionales(ProfesionalesEntity Profesionales);
+	public int crearProfesionales(ProfesionalesEntity Profesionales);
 	
 	public ProfesionalesEntity buscarProfesionales(int id);
 	

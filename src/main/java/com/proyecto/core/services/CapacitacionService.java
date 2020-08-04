@@ -3,11 +3,13 @@ package com.proyecto.core.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.proyecto.core.dao.CapacitacionRepository;
 import com.proyecto.core.interfaces.ICapacitacionServices;
 import com.proyecto.core.model.CapacitacionEntity;
 
+@Service
 public class CapacitacionService implements ICapacitacionServices {
 
 	@Autowired
@@ -20,10 +22,15 @@ public class CapacitacionService implements ICapacitacionServices {
 	}
 
 	@Override
-	public void crearCapacitacion(CapacitacionEntity Capacitacion) {
-		// TODO Auto-generated method stub
-		data.save(Capacitacion);
+	public int crearCapacitacion(CapacitacionEntity Capacitacion) {	
+		int respuesta = 0; 
+		CapacitacionEntity cp = data.save(Capacitacion);
+		
+		if(!cp.equals(null)) {
+			respuesta = 1;
+		}
 
+		return respuesta;
 	}
 
 	@Override

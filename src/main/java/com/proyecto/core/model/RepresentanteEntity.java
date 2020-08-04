@@ -30,6 +30,10 @@ public class RepresentanteEntity {
 	@Column (name="EMPRESA_RUT_EMPRESA")
 	private String emresaRut;
 	
+	public RepresentanteEntity() {
+		
+	}
+	
 	public RepresentanteEntity(int idRep, String usuarioRep, String claveRep, String nombreRep, String telRep,
 			String correoRep, String rutRep, String emresaRut) {
 		super();

@@ -2,72 +2,153 @@ package com.proyecto.core.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.proyecto.core.interfaces.IListadoCapacitaciones;
 
+import java.util.List;
+
+import javax.validation.Valid;
+
+import com.proyecto.core.interfaces.IAdministradorServices;
+import com.proyecto.core.interfaces.ICapacitacionServices;
+import com.proyecto.core.interfaces.IEmpresaServices;
+import com.proyecto.core.interfaces.IProfesionalesServices;
+import com.proyecto.core.model.AdministradorEntity;
+import com.proyecto.core.model.CapacitacionEntity;
+import com.proyecto.core.model.EmpresaEntity;
+import com.proyecto.core.model.ProfesionalesEntity;
 
 @Controller
 @RequestMapping("/administrador")
 public class ControladorVistasAdministrador {
-	
+
 	@Autowired
-	private IListadoCapacitaciones service;
+	private ICapacitacionServices serviceCap;
+	@Autowired
+	private IEmpresaServices serviceEmp;
+	@Autowired
+	private IAdministradorServices serviceAdmin;
+	@Autowired
+	private IProfesionalesServices servicePro;
 
 	@GetMapping("controlpagos")
-	public String control_pago() {
+	public String controlPago() {
 		return "control_pagos";
 	}
-	
+
 	@GetMapping("accidentabilidad")
-	public String calcular_accidentabilidad() {
+	public String calcularAccidentabilidad() {
 		return "calcular_accidentabilidad";
 	}
-	
+
 	@GetMapping("actividades")
-	public String visualizar_actividades() {
+	public String visualizarActividades() {
 		return "visualizar_actividades";
 	}
-	
+
 	@GetMapping("atrasos")
-	public String notificar_atrasos() {
+	public String notificarAtrasos() {
 		return "notificar_atrasos";
 	}
-	
+
 	@GetMapping("reportecliente")
-	public String generar_reporte_cliente() {
+	public String generarReporteCliente() {
 		return "generar_reporte_cliente";
 	}
-	
+
 	@GetMapping("reporteglobal")
-	public String generar_reporte_global() {
+	public String generarReporteGlobal() {
 		return "generar_reporte_global";
 	}
-	
+
+	//Clientes - Empresas
 	@GetMapping("mantencioninfocliente")
-	public String mantencion_info_clientes() {
+	public String mantencionInfoClientes(Model m) {
+		m.addAttribute("empresa", new EmpresaEntity());
+		List<AdministradorEntity> listado = serviceAdmin.mostrarAdministrador();
+		m.addAttribute("listado", listado);
 		return "mantencion_info_clientes";
 	}
+
+	@PostMapping("/nuevaempresa")
+	public String creaEmpresa(@Valid EmpresaEntity empresa, Model m) {
+
+		serviceEmp.crearEmpresa(empresa);
+		return "redirect:/administrador/listarempresas";
+	}
+
+	@GetMapping("/listarempresas")
+	public String listarEmpresas(Model m) {
+		List<EmpresaEntity> listado = serviceEmp.mostrarEmpresa();
+		m.addAttribute("listado", listado);
+		return "listar_empresas";
+	}
 	
+	//Profesionales
 	@GetMapping("mantencioninfoprofesional")
-	public String mantencion_info_profesional() {
+	public String mantencionInfoProfesional(Model m) {
+		m.addAttribute("profesional", new ProfesionalesEntity());
+		List<AdministradorEntity> listado = serviceAdmin.mostrarAdministrador();
+		m.addAttribute("listado", listado);
 		return "mantencion_info_profesional";
 	}
 	
-	@GetMapping("nuevacapacitacion")
-	public String nueva_capacitacion() {
+
 	
+	@PostMapping("/guardarprofesional")
+	public String creaProfesional(@Valid ProfesionalesEntity profesional, Model m) {
+		servicePro.crearProfesionales(profesional);
+		return "redirect:/administrador/listarprofesional";
+	}
+	
+	@GetMapping("/listarprofesional")
+	public String listarProfesionales(Model m) {
+		List<ProfesionalesEntity> listado = servicePro.mostrarProfesional();
+		m.addAttribute("listado", listado);
+		return "listado_profesionales";
+	}
+	
+	//Capacitaciones	
+	@GetMapping("nuevacapacitacion")
+	public String nuevaCapacitacion(Model m) {
+		m.addAttribute("capacitacion", new CapacitacionEntity());
 		return "nueva_capacitacion";
 	}
-	
-	@GetMapping("guardarcapacitacion")
-	public String save() {
-		
-		
-		//service.guardarNueva(cap);
-		return "redirect:/index";
-		
+
+	@PostMapping("/guardarcapacitacion")
+	public String creaCapacitacion(@Valid CapacitacionEntity capacitacion, Model m) {
+		serviceCap.crearCapacitacion(capacitacion);
+		return "redirect:/administrador/listarcapacitaciones";
+	}
+
+	@GetMapping("/listarcapacitaciones")
+	public String listarCapacitaciones(Model m) {
+		List<CapacitacionEntity> listado = serviceCap.mostrarCapacitacion();
+		m.addAttribute("listado", listado);
+		return "lista_capacitaciones";
 	}
 	
+	//Administradores
+	@GetMapping("nuevoadministrador")
+	public String nuevoAdministrador(Model m) {
+		m.addAttribute("nuevoadministrador", new AdministradorEntity());
+		return "ingreso_administrador";
+	}
+
+	@PostMapping("/guardaradministrador")
+	public String creaAdministrador(@Valid AdministradorEntity admin, Model m) {
+		serviceAdmin.crearAdministrador(admin);
+		return "redirect:/administrador/listaradministradores";
+	}
+
+	@GetMapping("/listaradministradores")
+	public String listarAdmin(Model model) {
+
+		List<AdministradorEntity> listado = serviceAdmin.mostrarAdministrador();
+		model.addAttribute("listado", listado);
+		return "listado_administradores";
+	}
 }

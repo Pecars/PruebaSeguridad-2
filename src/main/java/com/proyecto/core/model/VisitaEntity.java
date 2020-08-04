@@ -24,6 +24,10 @@ public class VisitaEntity {
 	@Column (name="PROFESIONALES_RUT_PROFESIONAL")
 	private String profesionalesRut;
 	
+	public VisitaEntity() {
+		
+	}
+	
 	public VisitaEntity(int idVisita, String motivoVis, String observacionVis, String rutEmp, String profesionalesRut) {
 		super();
 		this.idVisita = idVisita;

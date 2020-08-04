@@ -3,11 +3,13 @@ package com.proyecto.core.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.proyecto.core.dao.ProfesionalesRepository;
 import com.proyecto.core.interfaces.IProfesionalesServices;
 import com.proyecto.core.model.ProfesionalesEntity;
 
+@Service
 public class ProfesionalesService implements IProfesionalesServices {
 
 	@Autowired
@@ -20,9 +22,15 @@ public class ProfesionalesService implements IProfesionalesServices {
 	}
 
 	@Override
-	public void crearProfesionales(ProfesionalesEntity Profesionales) {
-		// TODO Auto-generated method stub
-		data.save(Profesionales);
+	public int crearProfesionales(ProfesionalesEntity Profesionales) {
+		int respuesta = 0; 
+		ProfesionalesEntity pro = data.save(Profesionales);
+		
+		if(!pro.equals(null)) {
+			respuesta = 1;
+		}
+
+		return respuesta;
 	}
 
 	@Override

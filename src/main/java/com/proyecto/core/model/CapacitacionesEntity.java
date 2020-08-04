@@ -31,6 +31,10 @@ public class CapacitacionesEntity {
 	@Column (name="TEMA_CAPACITACION")
 	private String temaCap;
 	
+	public CapacitacionesEntity() {
+		
+	}
+	
 	public CapacitacionesEntity(int idCaps, String cap, String empresa, String estadoCap, String fechaAge,
 			String fechaReal, String obs, String profesional, String temaCap) {
 		super();

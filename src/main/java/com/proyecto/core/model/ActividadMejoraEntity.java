@@ -24,6 +24,9 @@ public class ActividadMejoraEntity {
 	@Column (name="PROFESIONALES_RUT_PROF")
 	private String rutProf;
 	
+	public ActividadMejoraEntity() {
+		
+	}
 	
 	public ActividadMejoraEntity(int idActividadMejora, String problemaDet, String mejoraPro, String rutEmp,
 			String rutProf) {

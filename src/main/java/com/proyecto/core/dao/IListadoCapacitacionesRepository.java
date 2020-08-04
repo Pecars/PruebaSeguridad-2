@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.proyecto.core.model.ListadoCapacitaciones;
 
 @Repository
-public interface IListadoCapacitacionesDAO extends CrudRepository<ListadoCapacitaciones, Integer>{
+public interface IListadoCapacitacionesRepository extends CrudRepository<ListadoCapacitaciones, Integer>{
 
 }

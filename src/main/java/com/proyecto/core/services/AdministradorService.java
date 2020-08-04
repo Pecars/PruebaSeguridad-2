@@ -3,11 +3,14 @@ package com.proyecto.core.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.proyecto.core.dao.AdministradorRepository;
 import com.proyecto.core.interfaces.IAdministradorServices;
 import com.proyecto.core.model.AdministradorEntity;
 
+
+@Service
 public class AdministradorService implements IAdministradorServices {
 	
 	@Autowired
@@ -20,9 +23,15 @@ public class AdministradorService implements IAdministradorServices {
 	}
 
 	@Override
-	public void crearAdministrador(AdministradorEntity Administrador) {
-		// TODO Auto-generated method stub
-		data.save(Administrador);
+	public int crearAdministrador(AdministradorEntity Administrador) {
+		int respuesta = 0; 
+		AdministradorEntity adm = data.save(Administrador);
+		
+		if(!adm.equals(null)) {
+			respuesta = 1;
+		}
+
+		return respuesta;
 	}
 
 	@Override
@@ -37,4 +46,5 @@ public class AdministradorService implements IAdministradorServices {
 		data.deleteById(id);
 	}
 
+	
 }

@@ -24,6 +24,10 @@ public class ReporteAccidenteEntity {
 	@Column (name="REPRESENTANTE_RUT_REPRES")
 	private String representanteRut;
 	
+	public ReporteAccidenteEntity() {
+		
+	}
+	
 	public ReporteAccidenteEntity(int idReporteAcc, String tipoAcc, String descripcionAcc, String rutEmp,
 			String representanteRut) {
 		super();

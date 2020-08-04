@@ -5,8 +5,8 @@ import com.proyecto.core.model.AdministradorEntity;
 public interface IAdministradorServices {
 
 	public List<AdministradorEntity> mostrarAdministrador();
-	
-	public void crearAdministrador (AdministradorEntity Administrador);
+		
+	public int crearAdministrador (AdministradorEntity Administrador);
 	
 	public AdministradorEntity buscarAdministrador(int id);
 	

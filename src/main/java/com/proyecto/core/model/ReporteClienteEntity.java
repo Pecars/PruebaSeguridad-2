@@ -36,6 +36,10 @@ public class ReporteClienteEntity {
 	@Column (name="ADMINISTRADOR_RUT_ADMIN")
 	private String adminRut;
 	
+	public ReporteClienteEntity() {
+		
+	}
+
 	public ReporteClienteEntity(int idReporteCliente, String inicioPeriodoRep, String finPeriodoRep, String accPeriodo,
 			String tasaAcc, String capPeriodo, String asesoriasPeriodo, String visitasPeriodo,
 			String actividadesMejoraPeriodo, String empresaRut, String adminRut) {

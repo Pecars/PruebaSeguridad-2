@@ -40,6 +40,10 @@ public class ProfesionalesEntity {
 	@Column (name="ADMINISTRADOR_RUT_ADMIN")
 	private String admRut;
 	
+	public ProfesionalesEntity() {
+		
+	}
+	
 	public ProfesionalesEntity(int idPro, String nombrePro, String apellidoPro, String rutPro, String deptPro,
 			String telPro, String correoPro, String cargoPro, String profesionPro, String fechaIngresoPro,
 			String usuarioPro, String clavePro, String admRut) {

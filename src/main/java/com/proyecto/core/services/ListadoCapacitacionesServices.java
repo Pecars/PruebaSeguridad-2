@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.proyecto.core.dao.IListadoCapacitacionesDAO;
+import com.proyecto.core.dao.IListadoCapacitacionesRepository;
 import com.proyecto.core.interfaces.IListadoCapacitaciones;
 import com.proyecto.core.model.ListadoCapacitaciones;
 
@@ -14,7 +14,7 @@ import com.proyecto.core.model.ListadoCapacitaciones;
 public class ListadoCapacitacionesServices implements IListadoCapacitaciones {
 
 	@Autowired
-	private IListadoCapacitacionesDAO data;
+	private IListadoCapacitacionesRepository data;
 	
 	@Override
 	public List<ListadoCapacitaciones> listar() {

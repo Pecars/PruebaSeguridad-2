@@ -7,10 +7,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.apache.log4j.Logger;
+
 
 
 import com.proyecto.core.interfaces.IListadoCapacitaciones;
+import com.proyecto.core.model.AsesoriaEntity;
+import com.proyecto.core.model.CapacitacionesEntity;
 import com.proyecto.core.model.ListadoCapacitaciones;
 
 @Controller
@@ -27,7 +29,8 @@ public class ControladorVistasProfesional {
 	
 	
 	@GetMapping("capacitacion")
-	public String crear_capacitacion() {
+	public String crear_capacitacion(Model m) {
+		m.addAttribute("ingresocapacitacion", new CapacitacionesEntity());
 		return "crear_capacitacion";
 	}
 	
@@ -60,7 +63,8 @@ public class ControladorVistasProfesional {
 	}
 	
 	@GetMapping("ingreso_asesoria")
-	public String ingreso_asesoria() {
+	public String ingreso_asesoria(Model m) {
+		m.addAttribute("ingresoasesoria", new AsesoriaEntity());
 		return "ingreso_asesoria";
 	}
 	

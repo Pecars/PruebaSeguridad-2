@@ -8,11 +8,11 @@
 <div id="page-wrapper">
 	<div class="row">
 		<div class="col-lg-10">
-			<h1 class="page-header">Agenda de Capacitaciones</h1>
+			<h1 class="page-header">Listado de Capacitaciones</h1>
 		</div>
 		<div class="col-lg-2">
 
-			<a href="capacitacion"><button
+			<a href="nuevacapacitacion"><button
 					class="btn btn-success page-header">Agregar Nuevo</button></a>
 		</div>
 		<!-- /.col-lg-12 -->
@@ -29,28 +29,19 @@
 						id="dataTables-example">
 						<thead>
 							<tr>
-								<th>Capacitacion</th>
-								<th>Profesional</th>
-								<th>Empresa</th>
-								<th>Fecha Creacion</th>
-								<th>Fecha Realizada</th>
-								<th>Estado</th>
-								<th>Tema</th>
-								<th>Observaciones</th>
+								<th>Nombre Capacitación</th>
+								<th>Fecha de creación</th>
+								<th>Estado vigencia</th>
 								<th>Acciones</th>
+															
 							</tr>
 						</thead>
 						<tbody>
 							<c:forEach items="${listado}" var="obj">
 								<tr class="odd gradeX">
-									<td><c:out value="${obj.capacitacion}"/></td>
-									<td><c:out value="${obj.profesional}"/></td>
-									<td><c:out value="${obj.empresa}"/></td>
-									<td><c:out value="${obj.fechaAgendada}"/></td>
-									<td><c:out value="${obj.fechaRealizada}"/></td>
-									<td><c:out value="${obj.estado}"/></td>
-									<td><c:out value="${obj.tema}"/></td>
-									<td><c:out value="${obj.observacion}"/></td>
+									<td><c:out value="${obj.nomCap}"/></td>
+									<td><c:out value="${obj.fechaCreacionCap}"/></td>
+									<td align="center"><c:out value="${obj.vigenciaCap}"/></td>
 									<td align="center">
 										<div class="btn-group">
 											<button class="btn btn-warning">

@@ -32,22 +32,25 @@ public class EmpresaEntity {
 	@Column (name="FECHA_INGRESO_EMPRESA")
 	private String fechaIngresoEmp;
 	@Column (name="NUMERO_TRABAJADORES_ENERO")
-	private int numeroTrabajadoresEne;
+	private String numeroTrabajadoresEne;
 	@Column (name="NUMERO_TRABAJADORES_ABRIL")
-	private int numeroTrabajadoresAbr;
+	private String numeroTrabajadoresAbr;
 	@Column (name="NUMERO_TRABAJADORES_JULIO")
-	private int numeroTrabajadoresJul;
+	private String numeroTrabajadoresJul;
 	@Column (name="NUMERO_TRABAJADORES_SEPTIEMBRE")
-	private int numeroTrabajadoresSep;
+	private String numeroTrabajadoresSep;
 	@Column (name="TASA_ACCIDENTABILIDAD")
 	private String tasaAcc;
 	@Column (name="ADMINISTRADOR_RUT_ADMIN")
 	private String admRut;
 	
+	public EmpresaEntity() {
+		
+	}
+
 	public EmpresaEntity(int idEmp, String nombreEmp, String representanteEmp, String rutEmp, String direccionEmp,
-			String telEmp, String correoEmp, String giroEmp, String fechaIngresoEmp, int numeroTrabajadoresEne,
-			int numeroTrabajadoresAbr, int numeroTrabajadoresJul, int numeroTrabajadoresSep, String tasaAcc,
-			String admRut) {
+			String telEmp, String correoEmp, String giroEmp, String fechaIngresoEmp, String numeroTrabajadoresEne,
+			String numeroTrabajadoresAbr, String numeroTrabajadoresJul, String numeroTrabajadoresSep, String tasaAcc, String admRut) {
 		super();
 		this.idEmp = idEmp;
 		this.nombreEmp = nombreEmp;
@@ -138,35 +141,35 @@ public class EmpresaEntity {
 		this.fechaIngresoEmp = fechaIngresoEmp;
 	}
 
-	public int getNumeroTrabajadoresEne() {
+	public String getNumeroTrabajadoresEne() {
 		return numeroTrabajadoresEne;
 	}
 
-	public void setNumeroTrabajadoresEne(int numeroTrabajadoresEne) {
+	public void setNumeroTrabajadoresEne(String numeroTrabajadoresEne) {
 		this.numeroTrabajadoresEne = numeroTrabajadoresEne;
 	}
 
-	public int getNumeroTrabajadoresAbr() {
+	public String getNumeroTrabajadoresAbr() {
 		return numeroTrabajadoresAbr;
 	}
 
-	public void setNumeroTrabajadoresAbr(int numeroTrabajadoresAbr) {
+	public void setNumeroTrabajadoresAbr(String numeroTrabajadoresAbr) {
 		this.numeroTrabajadoresAbr = numeroTrabajadoresAbr;
 	}
 
-	public int getNumeroTrabajadoresJul() {
+	public String getNumeroTrabajadoresJul() {
 		return numeroTrabajadoresJul;
 	}
 
-	public void setNumeroTrabajadoresJul(int numeroTrabajadoresJul) {
+	public void setNumeroTrabajadoresJul(String numeroTrabajadoresJul) {
 		this.numeroTrabajadoresJul = numeroTrabajadoresJul;
 	}
 
-	public int getNumeroTrabajadoresSep() {
+	public String getNumeroTrabajadoresSep() {
 		return numeroTrabajadoresSep;
 	}
 
-	public void setNumeroTrabajadoresSep(int numeroTrabajadoresSep) {
+	public void setNumeroTrabajadoresSep(String numeroTrabajadoresSep) {
 		this.numeroTrabajadoresSep = numeroTrabajadoresSep;
 	}
 
@@ -196,6 +199,7 @@ public class EmpresaEntity {
 				+ ", numeroTrabajadoresSep=" + numeroTrabajadoresSep + ", tasaAcc=" + tasaAcc + ", admRut=" + admRut
 				+ "]";
 	}
+
 
 	@Override
 	public int hashCode() {

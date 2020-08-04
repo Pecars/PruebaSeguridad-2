@@ -24,6 +24,10 @@ public class RevisionMejoraEntity {
 	@Column (name="PROFESIONALES_RUT_PROFESIONAL")
 	private String profesionalesRut;
 	
+	public RevisionMejoraEntity() {
+		
+	}
+	
 	public RevisionMejoraEntity(int idRevMej, String cumplimientoRevMej, String observacionesRevMej,
 			String actividadMejoraIdActMej, String profesionalesRut) {
 		super();

@@ -3,11 +3,13 @@ package com.proyecto.core.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.proyecto.core.dao.EmpresaRepository;
 import com.proyecto.core.interfaces.IEmpresaServices;
 import com.proyecto.core.model.EmpresaEntity;
 
+@Service
 public class EmpresaService implements IEmpresaServices {
 
 	@Autowired
@@ -20,9 +22,15 @@ public class EmpresaService implements IEmpresaServices {
 	}
 
 	@Override
-	public void crearEmpresa(EmpresaEntity Empresa) {
-		// TODO Auto-generated method stub
-		data.save(Empresa);
+	public int crearEmpresa(EmpresaEntity Empresa) {
+		int respuesta = 0; 
+		EmpresaEntity emp = data.save(Empresa);
+		
+		if(!emp.equals(null)) {
+			respuesta = 1;
+		}
+
+		return respuesta;
 	}
 
 	@Override

@@ -32,6 +32,10 @@ public class AsesoriaEntity {
 	@Column (name="PROFESIONALES_RUT_PROF")
 	private String profesionalRut;
 	
+	public AsesoriaEntity() {
+
+	}
+	
 	public AsesoriaEntity(int idAse, String fechaAsesoriaAge, String fechaAsesoriaReal, String asesoriaInc,
 			String tipoAse, String temaAse, String obsAse, String empresaRut, String profesionalRut) {
 		super();
