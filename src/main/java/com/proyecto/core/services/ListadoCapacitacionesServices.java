@@ -6,7 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.proyecto.core.dao.IListadoCapacitacionesDAO;
+import com.proyecto.core.dao.IListadoCapacitacionesRepository;
+import com.proyecto.core.dao.ListadoCapacitacionesRepository;
 import com.proyecto.core.interfaces.IListadoCapacitaciones;
 import com.proyecto.core.model.ListadoCapacitaciones;
 
@@ -14,7 +15,7 @@ import com.proyecto.core.model.ListadoCapacitaciones;
 public class ListadoCapacitacionesServices implements IListadoCapacitaciones {
 
 	@Autowired
-	private IListadoCapacitacionesDAO data;
+	private ListadoCapacitacionesRepository data;
 	
 	@Override
 	public List<ListadoCapacitaciones> listar() {
@@ -25,6 +26,7 @@ public class ListadoCapacitacionesServices implements IListadoCapacitaciones {
 	@Override
 	public Optional<ListadoCapacitaciones> listarId(int id) {
 		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
@@ -39,5 +41,5 @@ public class ListadoCapacitacionesServices implements IListadoCapacitaciones {
 		// TODO Auto-generated method stub
 		
 	}
-
+	
 }

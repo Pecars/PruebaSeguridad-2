@@ -8,11 +8,11 @@
 <div id="page-wrapper">
 	<div class="row">
 		<div class="col-lg-10">
-			<h1 class="page-header">Agenda de Capacitaciones</h1>
+			<h1 class="page-header">Empresas</h1>
 		</div>
 		<div class="col-lg-2">
 
-			<a href="capacitacion"><button
+			<a href="mantencioninfocliente"><button
 					class="btn btn-success page-header">Agregar Nuevo</button></a>
 		</div>
 		<!-- /.col-lg-12 -->
@@ -29,28 +29,30 @@
 						id="dataTables-example">
 						<thead>
 							<tr>
-								<th>Capacitacion</th>
-								<th>Profesional</th>
 								<th>Empresa</th>
-								<th>Fecha Creacion</th>
-								<th>Fecha Realizada</th>
-								<th>Estado</th>
-								<th>Tema</th>
-								<th>Observaciones</th>
+								<th>Representante</th>
+								<th>Rut</th>
+								<th>Direccion</th>
+								<th>Fono</th>
+								<th>Correo</th>
+								<th>Giro</th>
+								<th>Fecha ingreso</th>
+								<th>Trabajadores</th>
 								<th>Acciones</th>
 							</tr>
 						</thead>
 						<tbody>
 							<c:forEach items="${listado}" var="obj">
 								<tr class="odd gradeX">
-									<td><c:out value="${obj.capacitacion}"/></td>
-									<td><c:out value="${obj.profesional}"/></td>
-									<td><c:out value="${obj.empresa}"/></td>
-									<td><c:out value="${obj.fechaAgendada}"/></td>
-									<td><c:out value="${obj.fechaRealizada}"/></td>
-									<td><c:out value="${obj.estado}"/></td>
-									<td><c:out value="${obj.tema}"/></td>
-									<td><c:out value="${obj.observacion}"/></td>
+									<td><c:out value="${obj.nombreEmp}"/></td>
+									<td><c:out value="${obj.representanteEmp}"/></td>
+									<td><c:out value="${obj.rutEmp}"/></td>
+									<td><c:out value="${obj.direccionEmp}"/></td>
+									<td><c:out value="${obj.telEmp}"/></td>
+									<td><c:out value="${obj.correoEmp}"/></td>
+									<td><c:out value="${obj.giroEmp}"/></td>
+									<td><c:out value="${obj.fechaIngresoEmp}"/></td>
+									<td><c:out value="${obj.numeroTrabajadoresEne}"/></td>
 									<td align="center">
 										<div class="btn-group">
 											<button class="btn btn-warning">
@@ -61,7 +63,6 @@
 											</button>
 
 										</div>
-									</td>
 								</tr>
 							</c:forEach>						
 						</tbody>

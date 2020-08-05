@@ -3,9 +3,10 @@ package com.proyecto.core.dao;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.proyecto.core.model.ListadoCapacitaciones;
+import com.proyecto.core.model.ActividadMejoraEntity;
 
 @Repository
-public interface IListadoCapacitacionesDAO extends CrudRepository<ListadoCapacitaciones, Integer>{
+public interface ActividadMejoraRepository extends CrudRepository<ActividadMejoraEntity, Integer> {
+	
 
 }

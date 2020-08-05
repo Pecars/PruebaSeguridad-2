@@ -8,11 +8,11 @@
 <div id="page-wrapper">
 	<div class="row">
 		<div class="col-lg-10">
-			<h1 class="page-header">Agenda de Capacitaciones</h1>
+			<h1 class="page-header">Listado de Administradores</h1>
 		</div>
 		<div class="col-lg-2">
 
-			<a href="capacitacion"><button
+			<a href="nuevoadministrador"><button
 					class="btn btn-success page-header">Agregar Nuevo</button></a>
 		</div>
 		<!-- /.col-lg-12 -->
@@ -21,7 +21,7 @@
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="panel panel-default">
-				<div class="panel-heading">DataTables Advanced Tables</div>
+				<div class="panel-heading">Administradores</div>
 				<!-- /.panel-heading -->
 				<div class="panel-body">
 					<table width="100%"
@@ -29,28 +29,24 @@
 						id="dataTables-example">
 						<thead>
 							<tr>
-								<th>Capacitacion</th>
-								<th>Profesional</th>
-								<th>Empresa</th>
-								<th>Fecha Creacion</th>
-								<th>Fecha Realizada</th>
-								<th>Estado</th>
-								<th>Tema</th>
-								<th>Observaciones</th>
+								<th>Nombre</th>
+								<th>Rut</th>
+								<th>Telefono</th>
+								<th>Correo</th>
+								<th>Usuario</th>
+								<th>Clave</th>
 								<th>Acciones</th>
 							</tr>
 						</thead>
 						<tbody>
 							<c:forEach items="${listado}" var="obj">
 								<tr class="odd gradeX">
-									<td><c:out value="${obj.capacitacion}"/></td>
-									<td><c:out value="${obj.profesional}"/></td>
-									<td><c:out value="${obj.empresa}"/></td>
-									<td><c:out value="${obj.fechaAgendada}"/></td>
-									<td><c:out value="${obj.fechaRealizada}"/></td>
-									<td><c:out value="${obj.estado}"/></td>
-									<td><c:out value="${obj.tema}"/></td>
-									<td><c:out value="${obj.observacion}"/></td>
+									<td><c:out value="${obj.nombreAdm}" /></td>
+									<td><c:out value="${obj.rutAdm}" /></td>
+									<td><c:out value="${obj.telAdm}" /></td>
+									<td><c:out value="${obj.correoAdm}" /></td>
+									<td><c:out value="${obj.usuarioAdm}" /></td>
+									<td><c:out value="${obj.claveAdm}" /></td>
 									<td align="center">
 										<div class="btn-group">
 											<button class="btn btn-warning">
@@ -63,11 +59,13 @@
 										</div>
 									</td>
 								</tr>
-							</c:forEach>						
+
+							</c:forEach>
+							
 						</tbody>
 					</table>
 					<!-- /.table-responsive -->
-					
+
 				</div>
 				<!-- /.panel-body -->
 			</div>

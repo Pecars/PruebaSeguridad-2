@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.Table;	
 
 @Entity
 @Table(name="INSTANCIA_CAPACITACION")
@@ -19,10 +19,10 @@ public class ListadoCapacitaciones {
 	private int capacitacion;
 	
 	@Column(name="PROFESIONALES_RUT_PROF")
-	private int profesional;
+	private String profesional;
 	
 	@Column(name="EMPRESA_RUT_EMPRESA")
-	private int empresa;
+	private String empresa;
 	
 	@Column(name="FECHA_AGENDADA")
 	private String fechaAgendada;
@@ -44,7 +44,7 @@ public class ListadoCapacitaciones {
 	
 	}
 
-	public ListadoCapacitaciones(int idCapacitacion, int capacitacion, int profesional, int empresa,
+	public ListadoCapacitaciones(int idCapacitacion, int capacitacion, String profesional, String empresa,
 			String fechaAgendada, String fechaRealizada, String estado, String tema, String observacion) {
 		super();
 		this.idCapacitacion = idCapacitacion;
@@ -74,19 +74,19 @@ public class ListadoCapacitaciones {
 		this.capacitacion = capacitacion;
 	}
 
-	public int getProfesional() {
+	public String getProfesional() {
 		return profesional;
 	}
 
-	public void setProfesional(int profesional) {
+	public void setProfesional(String profesional) {
 		this.profesional = profesional;
 	}
 
-	public int getEmpresa() {
+	public String getEmpresa() {
 		return empresa;
 	}
 
-	public void setEmpresa(int empresa) {
+	public void setEmpresa(String empresa) {
 		this.empresa = empresa;
 	}
 
@@ -136,6 +136,28 @@ public class ListadoCapacitaciones {
 				+ ", profesional=" + profesional + ", empresa=" + empresa + ", fechaAgendada=" + fechaAgendada
 				+ ", fechaRealizada=" + fechaRealizada + ", estado=" + estado + ", tema=" + tema + ", observacion="
 				+ observacion + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + idCapacitacion;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		ListadoCapacitaciones other = (ListadoCapacitaciones) obj;
+		if (idCapacitacion != other.idCapacitacion)
+			return false;
+		return true;
 	}
 	
 	

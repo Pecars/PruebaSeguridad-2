@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
 
@@ -12,7 +12,8 @@
 <title>Prevencion de Riesgos</title>
 
 <!-- Bootstrap Core CSS -->
-<link href="../resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../resources/vendor/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet">
 
 <!-- MetisMenu CSS -->
 <link href="../resources/vendor/metisMenu/metisMenu.min.css"
@@ -25,10 +26,14 @@
 <!-- <link href="../resources/vendor/morrisjs/morris.css" rel="stylesheet"> -->
 
 <!-- DataTables CSS -->
-<link href="../resources/vendor/datatables-plugins/dataTables.bootstrap.css"	rel="stylesheet">
+<link
+	href="../resources/vendor/datatables-plugins/dataTables.bootstrap.css"
+	rel="stylesheet">
 
 <!-- DataTables Responsive CSS -->
-<link href="../resources/vendor/datatables-responsive/dataTables.responsive.css"	rel="stylesheet">
+<link
+	href="../resources/vendor/datatables-responsive/dataTables.responsive.css"
+	rel="stylesheet">
 
 <!-- Custom Fonts -->
 <link href="../resources/vendor/font-awesome/css/font-awesome.min.css"
@@ -108,10 +113,12 @@
 								<li><a href="#"><i class="fa fa-wrench fa-fw"></i>Mantencion<span
 										class="fa arrow"></span></a>
 									<ul class="nav nav-second-level">
-										<li><a href="/administrador/mantencioninfocliente">Mantener
+										<li><a href="/administrador/listarempresas">Mantener
 												Información Clientes</a></li>
-										<li><a href="/administrador/mantencioninfoprofesional">Mantener
+										<li><a href="/administrador/listarprofesional">Mantener
 												Información Profesionales</a></li>
+										<li><a href="/administrador/listarcapacitaciones">Capacitaciones</a></li>
+										<li><a href="/administrador/listaradministradores">Administradores</a></li>
 									</ul></li>
 							</ul> <!-- /.nav-second-level --></li>
 
