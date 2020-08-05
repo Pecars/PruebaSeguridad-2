@@ -19,7 +19,7 @@ public class AsesoriaEspecialEntity {
 	private String rutEmpresa;
 	@Column(name="TIPO_ASESORIA")
 	private String tipoAsesoria;
-	@Column(name="OBSER_SOLI_ESPECIAL")
+	@Column(name="OBSER_SOLIC_ESPECIAL")
 	private String obserSolicEspecial;
 	
 	public AsesoriaEspecialEntity() {
