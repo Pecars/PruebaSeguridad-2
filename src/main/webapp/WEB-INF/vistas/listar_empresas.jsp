@@ -15,6 +15,7 @@
 			<a href="mantencioninfocliente"><button
 					class="btn btn-success page-header">Agregar Nuevo</button></a>
 		</div>
+		<br>
 		<!-- /.col-lg-12 -->
 	</div>
 	<!-- /.row -->
@@ -55,12 +56,12 @@
 									<td><c:out value="${obj.numeroTrabajadoresEne}"/></td>
 									<td align="center">
 										<div class="btn-group">
-											<button class="btn btn-warning">
+											<a href="editaremp/${obj.idEmp}"><button class="btn btn-warning">
 												<i class="fa fa-pencil"></i>
-											</button>
-											<button class="btn btn-danger">
+											</button></a>
+											<a onclick="eliminaremp([[${obj.idEmp}]])"><button class="btn btn-danger">
 												<i class="fa fa-times"></i>
-											</button>
+											</button></a>
 
 										</div>
 								</tr>

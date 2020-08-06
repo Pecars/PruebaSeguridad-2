@@ -125,10 +125,7 @@
 						<li><a href="#"><i class="fa fa-wrench fa-fw"></i>Profesional<span
 								class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
-								<li><a href="/profesional/capacitacion">Crear
-										Capacitacion</a></li>
-								<li><a href="/profesional/lista_capacitacion">Lista de
-										Capacitaciones</a></li>
+								<li><a href="/profesional/lista_capacitacion">Capacitaciones</a></li>
 								<li><a href="/profesional/visita">Planificar Visita</a></li>
 								<li><a href="/profesional/revisar_cliente">Revisar
 										Cliente</a></li>

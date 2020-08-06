@@ -41,6 +41,6 @@ public class CheckListService implements ICheckListServices {
 	public Optional<CheckListEntity> listarId(int id) {
 		// TODO Auto-generated method stub
 			
-		return null;
+		return data.findById(id);
 	}
 }

@@ -81,6 +81,21 @@ public class ControladorVistasAdministrador {
 		serviceEmp.crearEmpresa(empresa);
 		return "redirect:/administrador/listarempresas";
 	}
+	
+	@GetMapping("editaremp/{id}")
+	public String editarEmpresa(@PathVariable int id, Model m) {
+		Optional<EmpresaEntity> empresa = serviceEmp.listarId(id);
+		m.addAttribute("empresa", empresa);
+		List<AdministradorEntity> listado = serviceAdmin.mostrarAdministrador();
+		m.addAttribute("listado", listado);
+		return "mantencion_info_clientes";
+	}
+
+	@GetMapping("/eliminaremp/{id}")
+	public String eliminarEmpresa(@PathVariable int id, Model m) {
+		serviceEmp.borrarEmpresa(id);
+		return "redirect:/administrador/listarempresas";
+	}
 
 	@GetMapping("/listarempresas")
 	public String listarEmpresas(Model m) {
@@ -106,6 +121,21 @@ public class ControladorVistasAdministrador {
 		return "redirect:/administrador/listarprofesional";
 	}
 	
+	@GetMapping("editarprofesional/{id}")
+	public String editarProfesional(@PathVariable int id, Model m) {
+		Optional<ProfesionalesEntity> profesional = servicePro.listarId(id);
+		m.addAttribute("profesional", profesional);
+		List<AdministradorEntity> listado = serviceAdmin.mostrarAdministrador();
+		m.addAttribute("listado", listado);
+		return "mantencion_info_profesional";
+	}
+
+	@GetMapping("/eliminarprofesional/{id}")
+	public String eliminarProfesional(@PathVariable int id, Model m) {
+		servicePro.borrarProfesionales(id);
+		return "redirect:/administrador/listarprofesional";
+	}
+	
 	@GetMapping("/listarprofesional")
 	public String listarProfesionales(Model m) {
 		List<ProfesionalesEntity> listado = servicePro.mostrarProfesional();
@@ -126,7 +156,20 @@ public class ControladorVistasAdministrador {
 		serviceCap.crearCapacitacion(capacitacion);
 		return "redirect:/administrador/listarcapacitaciones";
 	}
-
+	
+	@GetMapping("/editarcap/{id}")
+	public String editarCapacitacion(@PathVariable int id, Model m) {
+		Optional<CapacitacionEntity> capacitacion = serviceCap.listarId(id);
+		m.addAttribute("capacitacion", capacitacion);
+		return "nueva_capacitacion"; 
+	}
+	
+	@GetMapping("/eliminarcap/{id}")
+	public String eliminarCapacitacion(@PathVariable int id, Model m) {
+		serviceCap.borrarCapacitacion(id);
+		return "redirect:/administrador/listarcapacitaciones";
+	}
+	
 	@GetMapping("/listarcapacitaciones")
 	public String listarCapacitaciones(Model m) {
 		List<CapacitacionEntity> listado = serviceCap.mostrarCapacitacion();
@@ -153,6 +196,12 @@ public class ControladorVistasAdministrador {
 		Optional<AdministradorEntity> administrador = serviceAdmin.listarId(id);
 		m.addAttribute("administrador", administrador);
 		return "ingreso_administrador";
+	}
+
+	@GetMapping("/eliminaradmin/{id}")
+	public String eliminarAdministrador(@PathVariable int id, Model m) {
+		serviceAdmin.borrarAdministrador(id);
+		return "redirect:/administrador/listaradministradores";
 	}
 
 	@GetMapping("/listaradministradores")

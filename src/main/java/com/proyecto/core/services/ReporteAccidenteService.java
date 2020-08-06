@@ -42,6 +42,6 @@ public class ReporteAccidenteService implements IReporteAccidenteServices {
 	public Optional<ReporteAccidenteEntity> listarId(int id) {
 		// TODO Auto-generated method stub
 			
-		return null;
+		return data.findById(id);
 	}
 }

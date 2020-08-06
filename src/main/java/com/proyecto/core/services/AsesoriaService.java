@@ -42,6 +42,6 @@ public class AsesoriaService implements IAsesoriaServices {
 	public Optional<AsesoriaEntity> listarId(int id) {
 		// TODO Auto-generated method stub
 			
-		return null;
+		return data.findById(id);
 	}
 }

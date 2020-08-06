@@ -42,6 +42,6 @@ public class ReporteGlobalService implements IReporteGlobalServices {
 	public Optional<ReporteGlobalEntity> listarId(int id) {
 		// TODO Auto-generated method stub
 			
-		return null;
+		return data.findById(id);
 	}
 }

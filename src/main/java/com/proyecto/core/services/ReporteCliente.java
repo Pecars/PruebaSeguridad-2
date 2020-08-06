@@ -42,7 +42,7 @@ public class ReporteCliente implements IReporteClienteServices {
 	public Optional<ReporteClienteEntity> listarId(int id) {
 		// TODO Auto-generated method stub
 			
-		return null;
+		return data.findById(id);
 	}
 
 }

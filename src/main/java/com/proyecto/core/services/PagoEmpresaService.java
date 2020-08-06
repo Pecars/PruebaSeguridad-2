@@ -42,6 +42,6 @@ public class PagoEmpresaService implements IPagoEmpresaSerices {
 	public Optional<PagoEmpresaEntity> listarId(int id) {
 		// TODO Auto-generated method stub
 			
-		return null;
+		return data.findById(id);
 	}
 }
