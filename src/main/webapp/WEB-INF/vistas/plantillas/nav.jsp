@@ -12,31 +12,31 @@
 <title>Prevencion de Riesgos</title>
 
 <!-- Bootstrap Core CSS -->
-<link href="../resources/vendor/bootstrap/css/bootstrap.min.css"
+<link href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
 
 <!-- MetisMenu CSS -->
-<link href="../resources/vendor/metisMenu/metisMenu.min.css"
+<link href="${pageContext.request.contextPath}/resources/vendor/metisMenu/metisMenu.min.css"
 	rel="stylesheet">
 
 <!-- Custom CSS -->
-<link href="../resources/dist/css/sb-admin-2.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/resources/dist/css/sb-admin-2.css" rel="stylesheet">
 
 <!-- Morris Charts CSS -->
-<!-- <link href="../resources/vendor/morrisjs/morris.css" rel="stylesheet"> -->
+<!-- <link href="../resources/vendor/morrisjs/resources/morris.css" rel="stylesheet"> -->
 
 <!-- DataTables CSS -->
 <link
-	href="../resources/vendor/datatables-plugins/dataTables.bootstrap.css"
+	href="${pageContext.request.contextPath}/resources/vendor/datatables-plugins/dataTables.bootstrap.css"
 	rel="stylesheet">
 
 <!-- DataTables Responsive CSS -->
 <link
-	href="../resources/vendor/datatables-responsive/dataTables.responsive.css"
+	href="${pageContext.request.contextPath}/resources/vendor/datatables-responsive/dataTables.responsive.css"
 	rel="stylesheet">
 
 <!-- Custom Fonts -->
-<link href="../resources/vendor/font-awesome/css/font-awesome.min.css"
+<link href="${pageContext.request.contextPath}/resources/vendor/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -134,7 +134,7 @@
 										Cliente</a></li>
 								<li><a href="/profesional/asesoria">Crear Caso de
 										Asesoria</a></li>
-								<li><a href="/profesional/mejora">Ingresar Actividad de
+								<li><a href="/profesional/listaractividadmejora">Ingresar Actividad de
 										Mejora</a></li>
 								<li><a href="/profesional/ingreso_asesoria">Ingresar
 										Asesoria</a></li></li>

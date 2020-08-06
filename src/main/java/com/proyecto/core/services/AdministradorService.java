@@ -1,6 +1,7 @@
 package com.proyecto.core.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.proyecto.core.dao.AdministradorRepository;
 import com.proyecto.core.interfaces.IAdministradorServices;
 import com.proyecto.core.model.AdministradorEntity;
+
 
 
 @Service
@@ -18,7 +20,6 @@ public class AdministradorService implements IAdministradorServices {
 
 	@Override
 	public List<AdministradorEntity> mostrarAdministrador() {
-		// TODO Auto-generated method stub
 		return (List<AdministradorEntity>) data.findAll();
 	}
 
@@ -45,6 +46,10 @@ public class AdministradorService implements IAdministradorServices {
 		// TODO Auto-generated method stub
 		data.deleteById(id);
 	}
-
+	
+	@Override
+	public Optional<AdministradorEntity> listarId(int id) {
+		return data.findById(id);
+	}
 	
 }

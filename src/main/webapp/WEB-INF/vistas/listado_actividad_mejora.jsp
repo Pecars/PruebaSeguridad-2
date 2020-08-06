@@ -8,11 +8,11 @@
 <div id="page-wrapper">
 	<div class="row">
 		<div class="col-lg-10">
-			<h1 class="page-header">Listado de Administradores</h1>
+			<h1 class="page-header">Actividades de mejora</h1>
 		</div>
 		<div class="col-lg-2">
 
-			<a href="nuevoadministrador"><button
+			<a href="mejora"><button
 					class="btn btn-success page-header">Agregar Nuevo</button></a>
 		</div>
 		<!-- /.col-lg-12 -->
@@ -21,7 +21,7 @@
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="panel panel-default">
-				<div class="panel-heading">Administradores</div>
+				<div class="panel-heading">DataTables Advanced Tables</div>
 				<!-- /.panel-heading -->
 				<div class="panel-body">
 					<table width="100%"
@@ -29,43 +29,37 @@
 						id="dataTables-example">
 						<thead>
 							<tr>
-								<th>Nombre</th>
-								<th>Rut</th>
-								<th>Telefono</th>
-								<th>Correo</th>
-								<th>Usuario</th>
-								<th>Clave</th>
+								<th>Problema</th>
+								<th>Propuesta</th>
+								<th>Empresa</th>
+								<th>Profesional</th>
 								<th>Acciones</th>
+								
 							</tr>
 						</thead>
 						<tbody>
 							<c:forEach items="${listado}" var="obj">
 								<tr class="odd gradeX">
-									<td><c:out value="${obj.nombreAdm}" /></td>
-									<td><c:out value="${obj.rutAdm}" /></td>
-									<td><c:out value="${obj.telAdm}" /></td>
-									<td><c:out value="${obj.correoAdm}" /></td>
-									<td><c:out value="${obj.usuarioAdm}" /></td>
-									<td><c:out value="${obj.claveAdm}" /></td>
+									<td><c:out value="${obj.problemaDet}"/></td>
+									<td><c:out value="${obj.mejoraPro}"/></td>
+									<td><c:out value="${obj.rutEmp}"/></td>
+									<td><c:out value="${obj.rutProf}"/></td>
 									<td align="center">
 										<div class="btn-group">
-											<a href="editaradmin/${obj.idAdm}"><button class="btn btn-warning">
+											<button class="btn btn-warning">
 												<i class="fa fa-pencil"></i>
-											</button></a>
-											<a href="eliminaradmin/${obj.idAdm}"><button class="btn btn-danger">
+											</button>
+											<button class="btn btn-danger">
 												<i class="fa fa-times"></i>
-											</button></a>
+											</button>
 
 										</div>
-									</td>
 								</tr>
-
-							</c:forEach>
-							
+							</c:forEach>						
 						</tbody>
 					</table>
 					<!-- /.table-responsive -->
-
+					
 				</div>
 				<!-- /.panel-body -->
 			</div>

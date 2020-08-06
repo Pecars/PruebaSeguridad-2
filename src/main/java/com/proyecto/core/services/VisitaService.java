@@ -1,6 +1,7 @@
 package com.proyecto.core.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -35,6 +36,13 @@ public class VisitaService implements IVisitaServices {
 	public void borrarVisita(int id) {
 		// TODO Auto-generated method stub
 		data.deleteById(id);
+	}
+	
+	@Override
+	public Optional<VisitaEntity> listarId(int id) {
+		// TODO Auto-generated method stub
+			
+		return null;
 	}
 
 }

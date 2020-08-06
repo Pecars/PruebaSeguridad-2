@@ -23,8 +23,9 @@
 					<h4>Ingrese los datos</h4>
 				</div>
 				<div class="panel-body">
-					<form:form method="post" action="guardaradministrador"
-						modelAttribute="nuevoadministrador">
+					<form:form method="post" action="/administrador/guardaradministrador"
+						modelAttribute="administrador">
+						<form:input path="idAdm" class="form-control" type="hidden" />
 						<div class="form-group col-lg-5">
 							<label>Nombre</label>
 							<form:input path="nombreAdm" class="form-control" type="text" />

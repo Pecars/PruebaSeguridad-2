@@ -1,6 +1,7 @@
 package com.proyecto.core.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,4 +46,10 @@ public class CapacitacionService implements ICapacitacionServices {
 		data.deleteById(id);
 	}
 
+	@Override
+	public Optional<CapacitacionEntity> listarId(int id) {
+		// TODO Auto-generated method stub
+			
+		return null;
+	}
 }

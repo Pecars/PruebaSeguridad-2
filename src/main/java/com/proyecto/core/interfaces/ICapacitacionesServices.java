@@ -1,6 +1,7 @@
 package com.proyecto.core.interfaces;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.proyecto.core.model.CapacitacionesEntity;
 
@@ -14,4 +15,5 @@ public interface ICapacitacionesServices {
 	
 	public void borrarCapacitaciones(int id);
 
+	public Optional<CapacitacionesEntity>listarId(int id);
 }

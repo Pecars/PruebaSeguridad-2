@@ -1,6 +1,7 @@
 package com.proyecto.core.interfaces;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.proyecto.core.model.ProfesionalesEntity;
 
@@ -14,4 +15,5 @@ public interface IProfesionalesServices {
 	
 	public void borrarProfesionales(int id);
 
+	public Optional<ProfesionalesEntity>listarId(int id);
 }
