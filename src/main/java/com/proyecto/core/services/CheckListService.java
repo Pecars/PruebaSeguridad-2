@@ -4,11 +4,13 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.proyecto.core.dao.CheckListRepository;
 import com.proyecto.core.interfaces.ICheckListServices;
 import com.proyecto.core.model.CheckListEntity;
 
+@Service
 public class CheckListService implements ICheckListServices {
 
 	@Autowired

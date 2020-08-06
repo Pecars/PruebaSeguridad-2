@@ -138,4 +138,86 @@ function eliminarcapacitacion(id) {
 		});
 }
 
+function eliminarvisita(id) {
+	console.log(id);
+	swal({
+		  title: "Esta seguro de Eliminar?",
+		  text: "Una vez eliminado no se prodra restablecer!",
+		  icon: "warning",
+		  buttons: true,
+		  dangerMode: true,
+		})
+		.then((OK) => {
+		  if (OK) {
+			  $.ajax({
+				 url:"/profesional/eliminarvisita/"+id,
+				 success: function(res) {
+					console.log(res);
+				},			
+			  });
+		    swal("Poof! Registro eliminado!", {
+		      icon: "success",
+		    }).then((ok)=>{
+		    	if(ok){
+		    		location.href="/profesional/listavisita";
+		    	}
+		    });
+		  } 
+		});
+}
 
+function eliminarmejora(id) {
+	console.log(id);
+	swal({
+		  title: "Esta seguro de Eliminar?",
+		  text: "Una vez eliminado no se prodra restablecer!",
+		  icon: "warning",
+		  buttons: true,
+		  dangerMode: true,
+		})
+		.then((OK) => {
+		  if (OK) {
+			  $.ajax({
+				 url:"/profesional/eliminarmejora/"+id,
+				 success: function(res) {
+					console.log(res);
+				},			
+			  });
+		    swal("Poof! Registro eliminado!", {
+		      icon: "success",
+		    }).then((ok)=>{
+		    	if(ok){
+		    		location.href="/profesional/listaractividadmejora";
+		    	}
+		    });
+		  } 
+		});
+}
+
+function eliminarasesoriaespecial(id) {
+	console.log(id);
+	swal({
+		  title: "Esta seguro de Eliminar?",
+		  text: "Una vez eliminado no se prodra restablecer!",
+		  icon: "warning",
+		  buttons: true,
+		  dangerMode: true,
+		})
+		.then((OK) => {
+		  if (OK) {
+			  $.ajax({
+				 url:"/profesional/eliminarasesoriaespecial/"+id,
+				 success: function(res) {
+					console.log(res);
+				},			
+			  });
+		    swal("Poof! Registro eliminado!", {
+		      icon: "success",
+		    }).then((ok)=>{
+		    	if(ok){
+		    		location.href="/profesional/listaasesoriaespecial";
+		    	}
+		    });
+		  } 
+		});
+}

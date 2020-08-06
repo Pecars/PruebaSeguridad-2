@@ -4,11 +4,13 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.proyecto.core.dao.VisitaRepository;
 import com.proyecto.core.interfaces.IVisitaServices;
 import com.proyecto.core.model.VisitaEntity;
 
+@Service
 public class VisitaService implements IVisitaServices {
 
 	@Autowired

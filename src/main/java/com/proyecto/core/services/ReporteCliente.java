@@ -4,11 +4,13 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.proyecto.core.dao.ReporteClienteRepository;
 import com.proyecto.core.interfaces.IReporteClienteServices;
 import com.proyecto.core.model.ReporteClienteEntity;
 
+@Service
 public class ReporteCliente implements IReporteClienteServices {
 	
 	@Autowired
