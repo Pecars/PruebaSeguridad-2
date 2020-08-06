@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.proyecto.core.dao.IListadoCapacitacionesRepository;
+
 import com.proyecto.core.dao.ListadoCapacitacionesRepository;
 import com.proyecto.core.interfaces.IListadoCapacitaciones;
 import com.proyecto.core.model.ListadoCapacitaciones;

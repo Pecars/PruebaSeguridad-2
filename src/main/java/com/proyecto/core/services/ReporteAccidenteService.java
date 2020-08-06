@@ -1,6 +1,7 @@
 package com.proyecto.core.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -36,5 +37,11 @@ public class ReporteAccidenteService implements IReporteAccidenteServices {
 		// TODO Auto-generated method stub
 		data.deleteById(id);
 	}
-
+	
+	@Override
+	public Optional<ReporteAccidenteEntity> listarId(int id) {
+		// TODO Auto-generated method stub
+			
+		return null;
+	}
 }

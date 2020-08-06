@@ -1,6 +1,7 @@
 package com.proyecto.core.interfaces;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.proyecto.core.model.ReporteGlobalEntity;
 
@@ -14,4 +15,5 @@ public interface IReporteGlobalServices {
 	
 	public void borrarReporteGlobal(int id);
 
+	public Optional<ReporteGlobalEntity>listarId(int id);
 }
