@@ -37,7 +37,7 @@
 
 				<div class="form-group col-lg-5">
 					<label>Rut</label>
-					<form:input path="rutPro" class="form-control" type="text" />
+					<form:input path="rutPro" class="form-control" type="text" id="rut" name="rut" required oninput="checkRut(this)" placeholder="Ingrese RUT"/>
 				</div>
 
 				<div class="form-group col-lg-5">
