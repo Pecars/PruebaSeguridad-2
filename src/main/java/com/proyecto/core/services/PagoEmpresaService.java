@@ -3,12 +3,14 @@ package com.proyecto.core.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.proyecto.core.dao.PagoEmpresaRepository;
-import com.proyecto.core.interfaces.IPagoEmpresaSerices;
+import com.proyecto.core.interfaces.IPagoEmpresaServices;
 import com.proyecto.core.model.PagoEmpresaEntity;
 
-public class PagoEmpresaService implements IPagoEmpresaSerices {
+@Service
+public class PagoEmpresaService implements IPagoEmpresaServices {
 	
 	@Autowired
 	private PagoEmpresaRepository data;

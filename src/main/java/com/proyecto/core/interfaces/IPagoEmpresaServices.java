@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.proyecto.core.model.PagoEmpresaEntity;
 
-public interface IPagoEmpresaSerices {
+public interface IPagoEmpresaServices {
 	
 	public List<PagoEmpresaEntity> mostrarPagoEmpresa();
 	
