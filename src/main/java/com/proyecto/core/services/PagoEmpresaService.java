@@ -11,7 +11,9 @@ import com.proyecto.core.interfaces.IPagoEmpresaServices;
 import com.proyecto.core.model.PagoEmpresaEntity;
 
 @Service
+
 public class PagoEmpresaService implements IPagoEmpresaServices {
+
 	
 	@Autowired
 	private PagoEmpresaRepository data;
@@ -44,6 +46,6 @@ public class PagoEmpresaService implements IPagoEmpresaServices {
 	public Optional<PagoEmpresaEntity> listarId(int id) {
 		// TODO Auto-generated method stub
 			
-		return null;
+		return data.findById(id);
 	}
 }
