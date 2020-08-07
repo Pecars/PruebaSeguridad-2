@@ -1,6 +1,7 @@
 package com.proyecto.core.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -35,6 +36,13 @@ public class ReporteCliente implements IReporteClienteServices {
 	public void borrarReporteCliente(int id) {
 		// TODO Auto-generated method stub
 		data.deleteById(id);
+	}
+	
+	@Override
+	public Optional<ReporteClienteEntity> listarId(int id) {
+		// TODO Auto-generated method stub
+			
+		return null;
 	}
 
 }

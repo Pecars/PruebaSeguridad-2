@@ -1,6 +1,7 @@
 package com.proyecto.core.interfaces;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.proyecto.core.model.ActividadMejoraEntity;
 
@@ -15,4 +16,5 @@ public interface IActividadMejoraServices {
 	
 	public void borrarActividadMejora(int id);
 
+	public Optional<ActividadMejoraEntity>listarId(int id);
 }

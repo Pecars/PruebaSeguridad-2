@@ -4,11 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -104,7 +106,8 @@ public class ControladorVistasAdministrador {
 		List<EmpresaEntity> listado = serviceEmp.mostrarEmpresa();
 		m.addAttribute("listado", listado);
 		return "listar_empresas";
-	}
+	}	
+	//Fin Clientes - Empresas
 	
 	//Profesionales
 	@GetMapping("mantencioninfoprofesional")
@@ -116,7 +119,6 @@ public class ControladorVistasAdministrador {
 	}
 	
 
-	
 	@PostMapping("/guardarprofesional")
 	public String creaProfesional(@Valid ProfesionalesEntity profesional, Model m) {
 		servicePro.crearProfesionales(profesional);
@@ -128,7 +130,8 @@ public class ControladorVistasAdministrador {
 		List<ProfesionalesEntity> listado = servicePro.mostrarProfesional();
 		m.addAttribute("listado", listado);
 		return "listado_profesionales";
-	}
+	}	
+	//Fin Profesionales
 	
 	//Capacitaciones	
 	@GetMapping("nuevacapacitacion")
@@ -148,12 +151,13 @@ public class ControladorVistasAdministrador {
 		List<CapacitacionEntity> listado = serviceCap.mostrarCapacitacion();
 		m.addAttribute("listado", listado);
 		return "lista_capacitaciones";
-	}
+	}	
+	//Fin Capacitaciones
 	
 	//Administradores
 	@GetMapping("nuevoadministrador")
 	public String nuevoAdministrador(Model m) {
-		m.addAttribute("nuevoadministrador", new AdministradorEntity());
+		m.addAttribute("administrador", new AdministradorEntity());
 		return "ingreso_administrador";
 	}
 
@@ -162,12 +166,20 @@ public class ControladorVistasAdministrador {
 		serviceAdmin.crearAdministrador(admin);
 		return "redirect:/administrador/listaradministradores";
 	}
+	
+	@GetMapping("/editaradmin/{id}")
+	public String editarAdministrador(@PathVariable int id, Model m) {
+		Optional<AdministradorEntity> administrador = serviceAdmin.listarId(id);
+		m.addAttribute("administrador", administrador);
+		return "ingreso_administrador";
+	}
 
 	@GetMapping("/listaradministradores")
-	public String listarAdmin(Model model) {
+	public String listarAdmin(Model model) {  
 
 		List<AdministradorEntity> listado = serviceAdmin.mostrarAdministrador();
 		model.addAttribute("listado", listado);
 		return "listado_administradores";
 	}
+	//Fin Administradores
 }

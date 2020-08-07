@@ -1,6 +1,7 @@
 package com.proyecto.core.interfaces;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.proyecto.core.model.ReporteClienteEntity;
 
@@ -14,4 +15,5 @@ public interface IReporteClienteServices {
 	
 	public void borrarReporteCliente(int id);
 
+	public Optional<ReporteClienteEntity>listarId(int id);
 }
