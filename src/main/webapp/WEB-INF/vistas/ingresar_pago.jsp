@@ -19,20 +19,15 @@
 		<div class="col-lg-12">
 			<div class="panel panel-green">
 				<div class="panel-heading">
-					<h4>Ingrese los datos</h4>
+					<h4>Ingrese los datos de pago</h4>
 				</div>
 				<div class="panel-body">
 					<form:form method="post" action="ingresocapacitacion"
 						modelAttribute="ingresocapacitacion">
 						<div class="form-group col-lg-6">
-							<label>Tipo Capacitacion</label>
-							<form:select path="cap" class="form-control" items="${listado}" multiple="true">
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-							</form:select>
+							<label>id pago</label>
+							<form:input path="cap" class="form-control" items="${listado}" multiple="true">
+							</form:input>
 						</div>
 						<div class="form-group col-lg-6">
 							<label>Profesional</label>
@@ -41,13 +36,8 @@
 						</div>
 						<div class="form-group col-lg-6">
 							<label>Empresa</label>
-							<form:select path="empresa" class="form-control">
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-							</form:select>
+							<form:input path="empresa" class="form-control">
+							</form:input>
 						</div>
 						<div class="form-group col-lg-6">
 							<label>Fecha agendada</label>
@@ -90,3 +80,4 @@
 		</div>
 
 		<jsp:include page="plantillas/scripts.jsp"></jsp:include>
+		
